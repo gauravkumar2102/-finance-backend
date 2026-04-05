@@ -46,7 +46,7 @@ const trends = asyncHandler(async (req, res) => {
 /**
  * GET /api/dashboard/category-breakdown?type=income|expense
  * Deeper slice — amounts per category filtered by transaction type.
- * Access: analyst, admin
+ * 
  */
 const categoryBreakdown = asyncHandler(async (req, res) => {
   const { type } = req.query;

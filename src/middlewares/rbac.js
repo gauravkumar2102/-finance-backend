@@ -2,22 +2,11 @@
 
 const { forbidden } = require('../utils/response');
 
-/**
- * Role hierarchy (higher number = more access):
- *   viewer  → 1  — can only read transactions
- *   analyst → 2  — can read + access dashboard analytics
- *   admin   → 3  — full management access
- *
- * Usage:
- *   router.delete('/users/:id', authenticate, authorize('admin'), handler)
- *   router.get('/dashboard',    authenticate, authorize('analyst'), handler)
- */
-
 const LEVELS = { viewer: 1, analyst: 2, admin: 3 };
 
 /**
  * Middleware factory.
- * @param  {...string} roles  Minimum role required (OR logic — any match passes)
+ * @param  {...string} roles  
  */
 function authorize(...roles) {
   return (req, res, next) => {

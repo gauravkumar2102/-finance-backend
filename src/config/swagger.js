@@ -39,16 +39,16 @@ A REST API for managing financial records, users, and role-based access control.
         email: 'gauravpmca24@cs.du.ac.in',
       },
     },
-    servers: [
-      {
-        url: 'http://localhost:3000',
-        description: 'Local development server',
-      },
-      {
-        url: 'https://your-deployed-app.onrender.com',
-        description: 'Production (update after deploy)',
-      },
-    ],
+   servers: [
+  {
+    url: 'https://finance-backend-hz54.onrender.com',  // ← paste this exactly
+    description: 'Live server (Render) — use this',
+  },
+  {
+    url: 'http://localhost:3000',
+    description: 'Local development server',
+  },
+],
     components: {
       securitySchemes: {
         bearerAuth: {
